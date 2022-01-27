@@ -1,11 +1,5 @@
 ---
 layout: page
-title: About Me
-permalink: /about/
+title: About Afif
+permalink: https://afifaniks.github.io
 ---
-
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.

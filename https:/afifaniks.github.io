@@ -4,19 +4,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>About Me | Afif’s Blog</title>
+<title>About Afif | Afif’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="About Me" />
+<meta property="og:title" content="About Afif" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="I will be writing my thoughts here." />
 <meta property="og:description" content="I will be writing my thoughts here." />
-<link rel="canonical" href="https://afifaniks.github.io/blog/about/" />
-<meta property="og:url" content="https://afifaniks.github.io/blog/about/" />
+<link rel="canonical" href="https://afifaniks.github.io/blog/https:/afifaniks.github.io" />
+<meta property="og:url" content="https://afifaniks.github.io/blog/https:/afifaniks.github.io" />
 <meta property="og:site_name" content="Afif’s Blog" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="About Me" />
+<meta property="twitter:title" content="About Afif" />
 <script type="application/ld+json">
-{"url":"https://afifaniks.github.io/blog/about/","@type":"WebSite","headline":"About Me","name":"Afif’s Blog","description":"I will be writing my thoughts here.","@context":"https://schema.org"}</script>
+{"url":"https://afifaniks.github.io/blog/https:/afifaniks.github.io","@type":"WebPage","headline":"About Afif","description":"I will be writing my thoughts here.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://afifaniks.github.io/blog/feed.xml" title="Afif's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -63,7 +63,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/blog/about/">About Me</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+        <div class="trigger"><a class="page-link" href="/blog/https:/afifaniks.github.io">About Afif</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -71,19 +71,11 @@ window.onload = wrap_img;
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About Me</h1>
+    <h1 class="post-title">About Afif</h1>
   </header>
 
   <div class="post-content">
-    <p>This website is powered by <strong><a href="https://github.com/fastai/fastpages">fastpages</a></strong> <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
-
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>a blogging platform that natively supports Jupyter notebooks in addition to other formats. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+    
 
   </div>
 

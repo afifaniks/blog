@@ -1,10 +1,129 @@
-<h1 id="singly-linked-list">Singly Linked List</h1>
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং | Afif’s Blog</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introduction to Singly Linked List in C Programming" />
+<meta property="og:description" content="Introduction to Singly Linked List in C Programming" />
+<link rel="canonical" href="https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html" />
+<meta property="og:url" content="https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html" />
+<meta property="og:site_name" content="Afif’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-15T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং" />
+<script type="application/ld+json">
+{"url":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html","@type":"BlogPosting","headline":"সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং","dateModified":"2017-04-15T00:00:00-05:00","datePublished":"2017-04-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html"},"description":"Introduction to Singly Linked List in C Programming","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://afifaniks.github.io/blog/feed.xml" title="Afif's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
 
-<h3 id="singly-linked-list-1">Singly Linked List</h3>
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">Afif&#39;s Blog</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/about/">About</a><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং</h1><p class="page-description">Introduction to Singly Linked List in C Programming</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2017-04-15T00:00:00-05:00" itemprop="datePublished">
+        Apr 15, 2017
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#c programming">c programming</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/blog/categories/#bangla">bangla</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#singly-linked-list">Singly Linked List</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#singly-linked-list-1">Singly Linked List</a></li>
+<li class="toc-entry toc-h3"><a href="#sll-এর-স্ট্রাকচার">SLL এর স্ট্রাকচার</a></li>
+<li class="toc-entry toc-h3"><a href="#sll-তৈরি-করা">SLL তৈরি করা</a></li>
+<li class="toc-entry toc-h2"><a href="#when-head-is-null">When *head is NULL:</a></li>
+<li class="toc-entry toc-h2"><a href="#when-head-is-not-nullassigning-reference-of-newnode-to-current-next">When *head is not NULL(Assigning reference of newNode to current-&gt;next):</a></li>
+<li class="toc-entry toc-h2"><a href="#updating-current">Updating *current:</a></li>
+<li class="toc-entry toc-h2"><a href="#"></a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#৫৪-ssl-প্রিন্টিংট্রাভার্সিং">৫.৪ SSL প্রিন্টিং/ট্রাভার্সিং</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><h1 id="singly-linked-list">
+<a class="anchor" href="#singly-linked-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Singly Linked List</h1>
+
+<h3 id="singly-linked-list-1">
+<a class="anchor" href="#singly-linked-list-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Singly Linked List</h3>
 
 <p>আগের অধ্যায়ে আমরা লিংকড লিস্টের যেসব বৈশিষ্ট্য নিয়ে আলোচনা করেছি মোটের উপর সেইসবগুলোই একটি <strong>Singly Linked List</strong> এর বৈশিষ্ট্য। আমরা পরবর্তী সব জায়গায় একে সংক্ষেপে <strong>SLL</strong> ডাকব। <strong>SLL</strong> হল এক ধরণের ডাটা স্ট্রাকচার যেখানে লিস্টের প্রতিটি নোডে ডাটা স্টোর এবং পরবর্তী নোডের রেফারেন্স রাখা হয়। আগের অধ্যায় যদি ঠিকঠাক বুঝে থাক, তাহলে নিশ্চয়ই বুঝতে পারছ স্ট্রাকচারটি কি রকম হবে। আমাদের এমন একটি স্ট্রাকচার ডিফাইন করতে হবে যে স্ট্রাকচারে আমরা ডাটা এবং একই টাইপের পরবর্তী নোডের এড্রেস রাখতে পারব।</p>
 
-<h3 id="sll-এর-স্ট্রাকচার">SLL এর স্ট্রাকচার</h3>
+<h3 id="sll-এর-স্ট্রাকচার">
+<a class="anchor" href="#sll-%E0%A6%8F%E0%A6%B0-%E0%A6%B8%E0%A7%8D%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%95%E0%A6%9A%E0%A6%BE%E0%A6%B0" aria-hidden="true"><span class="octicon octicon-link"></span></a>SLL এর স্ট্রাকচার</h3>
 
 <p>ধরা যাক আমরা কিছু ইন্টিজারের জন্য লিংকড লিস্ট বানাব। তাহলে আমাদের স্ট্রাকচার টা কি রকম হবে? নিচের কোডটা দেখার আগে একটু ভাব!</p>
 
@@ -27,11 +146,12 @@
 
 <p>এই জিনিসটি যদি আমরা ভিস্যুয়ালাইজ করি, তবে দুইটি নোডের ক্ষেত্রে আমরা নিচের ছবিটি দেখতে পাবঃ</p>
 
-<p><img src=".gitbook/assets/node.png" alt="" /></p>
+<p><img src="assets/2017-04-15-singly-linked-list/node.png" alt=""></p>
 
 <p>এখানে আমাদের হাতে দুইটি নোড আছে। দুইটি নোডই উপরে ডিফাইন করা স্ট্রাকচার থেকে তৈরি এতে আশা করি কারও কোন সন্দেহ নেই। এবার একটা জিনিস লক্ষ্য কর যে, প্রথম নোডের পয়েন্টারটি কিন্তু দ্বিতীয় নোডকে পয়েন্ট করে আছে। মানে সে দ্বিতীয় নোডের এড্রেসকে ধরে রেখেছে। এখন তোমার কাছে আমার প্রশ্ন হচ্ছে যে, দ্বিতীয় নোডের টাইপ কি? অবশ্যই তুমি যা ভাবছ তাই। এখানে দুটি নোডের টাইপই এক এবং তা হল <strong>struct Node.</strong> আর আমরা যদি কোন পয়েন্টারে এই নোডের রেফারেন্স রাখতে চাই তাহলে অবশ্যই সে পয়েন্টারের টাইপও তো তাই হবে। সে কারণেই আমাদের পয়েন্টারের টাইপ <strong>struct Node.</strong> এবার নিশ্চয়ই এই ব্যাপারে আর কোন ঝামেলা থাকার কথা না। তাই যদি হয় তবে এবার <strong>SLL</strong> তৈরি করা শেখা যাক।</p>
 
-<h3 id="sll-তৈরি-করা">SLL তৈরি করা</h3>
+<h3 id="sll-তৈরি-করা">
+<a class="anchor" href="#sll-%E0%A6%A4%E0%A7%88%E0%A6%B0%E0%A6%BF-%E0%A6%95%E0%A6%B0%E0%A6%BE" aria-hidden="true"><span class="octicon octicon-link"></span></a>SLL তৈরি করা</h3>
 
 <p><strong>SLL</strong> তৈরি করার আগে আমাদের কয়েকটা জিনিস মাথায় রাখতে হবে।</p>
 
@@ -139,19 +259,29 @@
 
 <p>এখানে আমরা যে কাজটি করেছি সেটি হল প্রথমেই ইউজার থেকে ইনপুট নিয়ে নিয়েছি যে আমরা কয়টি নোড তৈরি করব। ইনপুট যত হবে আমাদের নোডও ততটি তৈরি হবে মানে লুপ ততবার চলবে। লুপের শুরুতে আমরা <strong>newNode</strong> এর জন্যে মেমোরি এলোকেট করেছি। তারপর ইনিশিয়ালি নতুন নোডের পয়েন্টারকে <strong>NULL</strong> করে দিয়েছি এবং নতুন নোডের জন্য ভ্যালু ইনপুট নিয়েছি। এর পরের লাইনে আমরা টেস্ট করছি যে <strong>head, NULL</strong> কিনা। <strong>head</strong> যদি <strong>NULL</strong> হয় তবে আমাদের নতুন নোডই হেড, এবং যেহেতু আমাদের লিস্টে আপাতত আর কোন নোড নেই তাই সেটিই শেষ নোড বা <strong>current.</strong> এখন যেহেতু আমাদের হেড আর <strong>NULL</strong> না, তাই এই প্রোগ্রামের রানটাইমে আর কোন বার এই টেস্ট কেস পাস করবে না। এবং আমরা <strong>else case</strong> এ চলে যাব। সেখানে আমরা লাস্ট নোড এর পয়েন্টারে নতুন নোডের রেফারেন্স দিয়ে দিচ্ছি মানে <strong>current -&gt; next = newNode</strong> করে দিচ্ছি। এর মানে হল আমরা লাস্ট নোডের পয়েন্টারে আমাদের নতুন নোডের এড্রেস দিয়ে দিচ্ছি বা লিংক তৈরি করছি। আর যেহেতু তখন এই নতুন নোডটিই আমাদের শেষ নোড তাই <strong>current</strong> এর রেফারেন্সও আপডেট করে দিচ্ছি। নিচের ভিজ্যুয়ালাইজেশানটি দেখলে আশা করি ব্যাপারটি আরও পরিষ্কার হয়ে যাবে।</p>
 
-<h2 id="when-head-is-null"><em>When *head is NULL:</em></h2>
+<h2 id="when-head-is-null">
+<a class="anchor" href="#when-head-is-null" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>When *head is NULL:</em>
+</h2>
 
-<p><img src=".gitbook/assets/uu.png" alt="" /></p>
+<p><img src="assets/2017-04-15-singly-linked-list/uu.png" alt=""></p>
 
-<h2 id="when-head-is-not-nullassigning-reference-of-newnode-to-current-next"><em>When *head is not NULL(Assigning reference of newNode to current-&gt;next):</em></h2>
+<h2 id="when-head-is-not-nullassigning-reference-of-newnode-to-current-next">
+<a class="anchor" href="#when-head-is-not-nullassigning-reference-of-newnode-to-current-next" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>When *head is not NULL(Assigning reference of newNode to current-&gt;next):</em>
+</h2>
 
-<h2 id="updating-current"><img src=".gitbook/assets/uu2.png" alt="" /><em>Updating *current:</em></h2>
+<h2 id="updating-current">
+<a class="anchor" href="#updating-current" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="assets/2017-04-15-singly-linked-list/uu2.png" alt=""><em>Updating *current:</em>
+</h2>
 
-<h2><img src=".gitbook/assets/uu3.png" alt="" /></h2>
+<h2>
+<a class="anchor" href="#" aria-hidden="true"><span class="octicon octicon-link"></span></a><img src="assets/2017-04-15-singly-linked-list/uu3.png" alt="">
+</h2>
 
 <p>এবার নিজে নিজে এই কোডটি লিখে ফেল।</p>
 
-<h3 id="৫৪-ssl-প্রিন্টিংট্রাভার্সিং"><strong>৫.৪ SSL প্রিন্টিং/ট্রাভার্সিং</strong></h3>
+<h3 id="৫৪-ssl-প্রিন্টিংট্রাভার্সিং">
+<a class="anchor" href="#%E0%A7%AB%E0%A7%AA-ssl-%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A8%E0%A7%8D%E0%A6%9F%E0%A6%BF%E0%A6%82%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AD%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%B8%E0%A6%BF%E0%A6%82" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>৫.৪ SSL প্রিন্টিং/ট্রাভার্সিং</strong>
+</h3>
 
 <p><strong>SSL</strong> ট্রাভার্সিং এর ক্ষেত্রে আমরা <strong>head</strong> থেকে শুরু করে যতক্ষণ না পর্যন্ত ট্রাভার্সিং নোডের রেফারেন্সে <strong>NULL</strong> না পাব ততক্ষণ পর্যন্ত লুপ চালিয়ে যাব। আর প্রতি ইটারেশান শেষে নোডের রেফারেন্স পরবর্তী নোডের রেফারেন্সে আপডেট করব। এবার নিচের কোডটি দেখার আগে নিজে একটু চেষ্টা করে দেখে নিতে পার।</p>
 
@@ -166,3 +296,37 @@
 </code></pre></div></div>
 
 <p>এখানে <strong>printList()</strong> ফাংশানটিতে আর্গুমেন্ট হিসেবে লিস্টের <strong>head</strong> কে পাঠাতে হবে। তারপর আমরা হেড থেকে শুরু করে প্রতিটি নোডের ডাটা প্রিন্ট করব এবং প্রিন্ট করা শেষে পরবর্তী নোডের এড্রেস হিসেবে আমাদের ট্রাভার্সিং নোডকে আপডেট করব। এরকম করে চলতে থাকবে যতক্ষণ না পর্যন্ত <strong>NULL</strong> পাওয়া যায়। নাল পেলে বুঝতে হবে এটিই আমাদের লিস্টের শেষ, তখন লুপ ব্রেক করবে এবং ফাংশানের কাজ শেষ হবে।</p>
+
+  </div><a class="u-url" href="/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Sharing the things I figured on my journey.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/afifaniks" target="_blank" title="afifaniks"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.instagram.com/afifaniks" target="_blank" title="afifaniks"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#instagram"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/afifaniks" target="_blank" title="afifaniks"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/afifaniks" target="_blank" title="afifaniks"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

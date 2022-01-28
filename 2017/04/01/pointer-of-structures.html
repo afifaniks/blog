@@ -1,0 +1,61 @@
+<h1 id="স্ট্রাকচারের-পয়েন্টার">স্ট্রাকচারের পয়েন্টার</h1>
+
+<h2 id="পয়েন্টার-কি">পয়েন্টার কি?</h2>
+
+<p>আমরা সবাই জানি পয়েন্টার কি। পয়েন্টার হল এক ধরণের ভ্যারিয়েবল যে অন্য ভ্যারিয়েবলের এড্রেস ধরে রাখে। পয়েন্টার কিভাবে কাজ করে তাও আশা করি আমরা সবাই মোটামুটি জানি। এখানে আমরা পয়েন্টারের ব্যাসিক নিয়ে তেমন আলোচনা করব না। আমরা এখানে যে বিষয়টি নিয়ে আলোচনা করব সেটি হচ্ছে, স্ট্রাকচারের পয়েন্টার। তবে পরের অংশটুকু বুঝে পড়ার জন্য পয়েন্টার সম্পর্কে ধারণা থাকা খুবই জরুরি।</p>
+
+<h2 id="স্ট্রাকচারের-পয়েন্টার-1">স্ট্রাকচারের পয়েন্টার</h2>
+
+<p>এটা আমাদের সবারই জানা যে, কোন পয়েন্টার ডিক্লেয়ার করার আগে আমাদের ঐ পয়েন্টারের টাইপ বলে দিতে হয়। কারণ ঐ পয়েন্টার তো আর জানে না যে সে কোন টাইপের ভ্যারিয়বলের এড্রেস রাখবে। মনে হতে পারে যে, তার কাজতো শুধু এড্রেসই ধরে রাখা তবে টাইপ দেয়ার দরকার টা কি! দরকার আছে। আমরা জানি যে, বিভিন্ন ডাটা টাইপ মেমোরিতে বিভিন্ন রকম জায়গা নেয়। যেমন কোন <strong>char</strong> টাইপ ভ্যারিয়েবল ১ বাইট জায়গা নেয়, যেখানে <strong>int</strong> টাইপ নেয় ৪ বাইট। এখন আমরা যখন ইন্টিজার টাইপের পয়েন্টার ডিক্লেয়ার করি তখন সে তার পয়েন্টিং এড্রেসের পরবর্তী ৪ বাইটের এড্রেসের জন্যে ডাটা রিড করবে, যেখানে ক্যারেক্টার টাইপ করবে শুধুমাত্র পরবর্তী বাইটের জন্য। আশা করি, টাইপের ব্যাপারটা এবার পরিষ্কার! এবার আসা যাক স্ট্রাকচারের পয়েন্টারে। আমরা এতক্ষণ দেখেছি যে বিভিন্ন ডাটা টাইপের জন্য তাদের নিজস্ব টাইপের পয়েন্টার হয়। আবার স্ট্রাকচারও যেহেতু এক ধরণের ইউজার ডিফাইন্ড ডাটা টাইপ এবং স্বভাবতই ডিক্লেয়ার করার সাথে সাথে স্ট্রাকচার মেমোরিতে প্রয়োজনমত জায়গা নিবে সুতরাং তারও পয়েন্টার ডিক্লেয়ার করা যায়। স্ট্রাকচারের পয়েন্টারের কর্মক্ষেত্র অনেক ব্যাপক। অনেক ধরণের ডাটা স্ট্রাকচার শুধুমাত্র স্ট্রাকচারের পয়েন্টারের ধারণায় তৈরি হয়েছে। যার কিছু আমরা পরবর্তিতে দেখব। গত অধ্যায়ে আমরা দেখেছি কিভাবে ডট অপারেটর দিয়ে আমরা স্ট্রাকচারের মেম্বারদের অ্যাক্সেস করতে পারি। আমরা কিন্তু চাইলে পয়েন্টার দিয়েও কাজটা করে ফেলতে পারি। সেক্ষেত্রে আমাদের আরেকটি অপারেটর আছে যেটির ব্যবহার আমরা একটু পরেই দেখব। আপাতত নিচের উদাহরণটি লক্ষ্য করা যাকঃ</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Man</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Man</span> <span class="o">*</span><span class="n">pointerForMan</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>এখানে প্রথমে আমরা আগের মতই একটি স্ট্রাকচার ডিক্লেয়ার করেছি যার নাম <strong>Man</strong>. এতে দুইটি ফিল্ড আছে। যার একটি নাম, অপরটি বয়স। তারপর আমরা যে কাজটি করেছি সেটি হল, আমাদের ডিক্লেয়ার করা স্ট্রাকচার টাইপের একটি পয়েন্টার ডিক্লেয়ার করেছি। এখানে <strong>struct Man</strong> এইটা হচ্ছে আমদের পয়েন্টারের টাইপ। <strong>struct</strong> দিয়ে আমরা বুঝাচ্ছি যে এটি একটি স্ট্রাকচার এবং পরের <strong>Man</strong> দ্বারা আমরা আমাদের ডিক্লেয়ার করা স্ট্রাকচারটিকে নির্দেশ করছি। আর বাকিটা তো সাধারণ পয়েন্টার ডিক্লারেশানের মতই। আশা করি, এতটুকু বুঝতে কোন প্রবলেম নেই। একটু আধটু থাকলেও দুই একটা উদাহরণ দেখলেই পরিষ্কার হয়ে যাবে। এখন আমরা যদি এই স্ট্রাকচারের জন্য একটি ভ্যারিয়বল ডিক্লেয়ার করি এবং এর এড্রেস আমাদের ডিক্লেয়ার করে পয়েন্টার <strong>*pointerForMan</strong> এ এসাইন করে দেই, তাহলে সেটি অন্যান্য পয়েন্টার যেভাবে কাজ করে ঠিক সেভাবেই কাজ করবে। নিচের প্রোগ্রামটি লক্ষ্য করা যাকঃ</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="k">struct</span> <span class="n">Man</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">struct</span> <span class="n">Man</span> <span class="n">Man1</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="n">Man</span> <span class="o">*</span><span class="n">pointerForMan</span><span class="p">;</span>
+
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">Man1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">"Abul"</span><span class="p">);</span>
+    <span class="n">Man1</span><span class="p">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">102</span><span class="p">;</span>
+
+    <span class="n">pointerForMan</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">Man1</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">Man1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">Man1</span><span class="p">.</span><span class="n">age</span><span class="p">);</span> <span class="c1">//Print1</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">pointerForMan</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">,</span> <span class="n">pointerForMan</span><span class="o">-&gt;</span><span class="n">age</span><span class="p">);</span> <span class="c1">//Print2</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>উপরের কোডটি রান কর। কি দেখতে পেলে? সব ঠিকঠাক থাকলে নিচের ছবির মত আউটপুট দেখতে পাওয়ার কথা। লক্ষ্য কর, এখানে একই লাইন দুইবার দেখা যাচ্ছে।</p>
+
+<p><img src=".gitbook/assets/Screenshot from 2017-10-14 03-47-34.png" alt="" /></p>
+
+<p>কোডের দিকে তাকালে দেখতে পাবে আমরা Print1 লাইনটিতে নরমালি স্ট্রাকচার ভ্যারিয়েবল থেকে ডাটা প্রিন্ট করেছি। কিন্তু দ্বিতীয় লাইনে(Print2) আমরা যেটা করেছি সেটা হল, আমরা পয়েন্টার দিয়ে কাজটা করেছি। উপরের কোডে আমরা প্রথমে Man1 নামে একটি স্ট্রাকচার ভ্যারিয়েবল ডিক্লেয়ার করেছি। এবং তারপর একই টাইপের একটি পয়েন্টার pointerForMan ডিক্লেয়ার করেছি। তারপর, Man1 এর জন্য প্রয়োজনমত ইনপুট নিয়ে Man1 এর রেফারেন্স পয়েন্টারটিতে এসাইন করে দিয়েছি। এখন কথা হচ্ছে, Print2 তে আমরা কাজটি কিভাবে করলাম? আমরা এখানে একটি ‘নতুন’ অপারেটর ব্যবহার করেছি। অপারেটরটি হল ‘<strong>-&gt;’(Structure pointer operator).</strong> এই অপারেটরটি দিয়ে মূলত পয়েন্টারের মাধ্যমে আমরা কোন স্ট্রাকচারের মেম্বারকে এক্সেস করতে পারি। আমরা চাইলে কোন স্ট্রাকচার ভ্যারিয়েবল ছাড়াই শুধুমাত্র পয়েন্টার এবং এই অপারেটর ব্যবহার করে কোন স্ট্রাকচারের যেকোন ফিল্ডের ভ্যালু এসাইন, চেঞ্জ করতে পারি। তবে সেক্ষেত্রে আমাদের ডায়নামিকালি মেমোরি এলোকেট করে নিতে হবে। সেটা আমরা পরের অধ্যায়ে দেখব। এবার তুমি নিজে নিজে একই ভাবে, একটি স্ট্রাকচার ডিক্লেয়ার করে সেই স্ট্রাকচারের জন্য দুইটি ভ্যারিয়েবল এবং দুইটি পয়েন্টার ডিক্লেয়ার করে পয়েন্টার দিয়ে স্ট্রাকচারের মেম্বারগুলোর ভ্যালু প্রিন্ট করার চেষ্টা কর। চাইলে নিচের <strong>Example</strong> স্ট্রাকচারটি ব্যবহার করতে পার।</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Example</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">data2</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">data3</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>

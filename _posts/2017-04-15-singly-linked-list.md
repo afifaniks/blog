@@ -1,3 +1,11 @@
+---
+toc: true
+layout: post
+description: Introduction to Singly Linked List in C Programming
+categories: ["c programming", "bangla"]
+title: সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং
+---
+
 # Singly Linked List
 
 ### Singly Linked List
@@ -30,7 +38,7 @@ struct Node *ptr; //where (struct node) is the Data Type
 
 এই জিনিসটি যদি আমরা ভিস্যুয়ালাইজ করি, তবে দুইটি নোডের ক্ষেত্রে আমরা নিচের ছবিটি দেখতে পাবঃ
 
-![](.gitbook/assets/node.png)
+![](assets/2017-04-15-singly-linked-list/node.png)
 
 এখানে আমাদের হাতে দুইটি নোড আছে। দুইটি নোডই উপরে ডিফাইন করা স্ট্রাকচার থেকে তৈরি এতে আশা করি কারও কোন সন্দেহ নেই। এবার একটা জিনিস লক্ষ্য কর যে, প্রথম নোডের পয়েন্টারটি কিন্তু দ্বিতীয় নোডকে পয়েন্ট করে আছে। মানে সে দ্বিতীয় নোডের এড্রেসকে ধরে রেখেছে। এখন তোমার কাছে আমার প্রশ্ন হচ্ছে যে, দ্বিতীয় নোডের টাইপ কি? অবশ্যই তুমি যা ভাবছ তাই। এখানে দুটি নোডের টাইপই এক এবং তা হল **struct Node.** আর আমরা যদি কোন পয়েন্টারে এই নোডের রেফারেন্স রাখতে চাই তাহলে অবশ্যই সে পয়েন্টারের টাইপও তো তাই হবে। সে কারণেই আমাদের পয়েন্টারের টাইপ **struct Node.** এবার নিশ্চয়ই এই ব্যাপারে আর কোন ঝামেলা থাকার কথা না। তাই যদি হয় তবে এবার **SLL** তৈরি করা শেখা যাক।
 
@@ -145,13 +153,13 @@ int main()
 
 ## _When \*head is NULL:_
 
-![](.gitbook/assets/uu.png)
+![](assets/2017-04-15-singly-linked-list/uu.png)
 
 ## _When \*head is not NULL(Assigning reference of newNode to current->next):_
 
-## ![](.gitbook/assets/uu2.png)_Updating \*current:_
+## ![](assets/2017-04-15-singly-linked-list/uu2.png)_Updating \*current:_
 
-## ![](.gitbook/assets/uu3.png)
+## ![](assets/2017-04-15-singly-linked-list/uu3.png)
 
 এবার নিজে নিজে এই কোডটি লিখে ফেল।
 

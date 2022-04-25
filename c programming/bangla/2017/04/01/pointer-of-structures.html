@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>স্ট্রাকচারের পয়েন্টার - সি প্রোগ্রামিং | Afif’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="স্ট্রাকচারের পয়েন্টার - সি প্রোগ্রামিং" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="স্ট্রাকচারের পয়েন্টার - সি প্রোগ্রামিং" />
 <script type="application/ld+json">
-{"url":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/01/pointer-of-structures.html","@type":"BlogPosting","headline":"স্ট্রাকচারের পয়েন্টার - সি প্রোগ্রামিং","dateModified":"2017-04-01T00:00:00-05:00","datePublished":"2017-04-01T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/01/pointer-of-structures.html"},"description":"Pointer of Structures in C Programming","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-04-01T00:00:00-05:00","datePublished":"2017-04-01T00:00:00-05:00","description":"Pointer of Structures in C Programming","headline":"স্ট্রাকচারের পয়েন্টার - সি প্রোগ্রামিং","mainEntityOfPage":{"@type":"WebPage","@id":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/01/pointer-of-structures.html"},"url":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/01/pointer-of-structures.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://afifaniks.github.io/blog/feed.xml" title="Afif's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -129,8 +129,8 @@ window.onload = wrap_img;
 
 <p>এখানে প্রথমে আমরা আগের মতই একটি স্ট্রাকচার ডিক্লেয়ার করেছি যার নাম <strong>Man</strong>. এতে দুইটি ফিল্ড আছে। যার একটি নাম, অপরটি বয়স। তারপর আমরা যে কাজটি করেছি সেটি হল, আমাদের ডিক্লেয়ার করা স্ট্রাকচার টাইপের একটি পয়েন্টার ডিক্লেয়ার করেছি। এখানে <strong>struct Man</strong> এইটা হচ্ছে আমদের পয়েন্টারের টাইপ। <strong>struct</strong> দিয়ে আমরা বুঝাচ্ছি যে এটি একটি স্ট্রাকচার এবং পরের <strong>Man</strong> দ্বারা আমরা আমাদের ডিক্লেয়ার করা স্ট্রাকচারটিকে নির্দেশ করছি। আর বাকিটা তো সাধারণ পয়েন্টার ডিক্লারেশানের মতই। আশা করি, এতটুকু বুঝতে কোন প্রবলেম নেই। একটু আধটু থাকলেও দুই একটা উদাহরণ দেখলেই পরিষ্কার হয়ে যাবে। এখন আমরা যদি এই স্ট্রাকচারের জন্য একটি ভ্যারিয়বল ডিক্লেয়ার করি এবং এর এড্রেস আমাদের ডিক্লেয়ার করে পয়েন্টার <strong>*pointerForMan</strong> এ এসাইন করে দেই, তাহলে সেটি অন্যান্য পয়েন্টার যেভাবে কাজ করে ঠিক সেভাবেই কাজ করবে। নিচের প্রোগ্রামটি লক্ষ্য করা যাকঃ</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
 </span>
 <span class="k">struct</span> <span class="n">Man</span>
 <span class="p">{</span>

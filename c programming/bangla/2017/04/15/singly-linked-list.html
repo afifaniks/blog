@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং | Afif’s Blog</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং" />
 <script type="application/ld+json">
-{"url":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html","@type":"BlogPosting","headline":"সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং","dateModified":"2017-04-15T00:00:00-05:00","datePublished":"2017-04-15T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html"},"description":"Introduction to Singly Linked List in C Programming","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2017-04-15T00:00:00-05:00","datePublished":"2017-04-15T00:00:00-05:00","description":"Introduction to Singly Linked List in C Programming","headline":"সিঙ্গলি লিংকড লিস্ট - সি প্রোগ্রামিং","mainEntityOfPage":{"@type":"WebPage","@id":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html"},"url":"https://afifaniks.github.io/blog/c%20programming/bangla/2017/04/15/singly-linked-list.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://afifaniks.github.io/blog/feed.xml" title="Afif's Blog" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -197,8 +197,8 @@ window.onload = wrap_img;
 
 <p>আসলে পরবর্তী সকল নোডের ক্ষেত্রে আমরা একই রকম কাজ করব। সেক্ষেত্রে আমাদের <strong>if</strong> এর পরে একটি <strong>else case</strong> জুড়ে দিতে হবে। এবং সেখানে আমরা বলে দিব বাকি সকল নোডের জন্য আমরা কি করব। বাকি সকল নোডের ক্ষেত্রে আমরা যা করব তা হল নতুন নোডের এড্রেস আমরা আমাদের লাস্ট নোড<strong>(current)</strong> এর পয়েন্টারে এসাইন করে দিব মানে <strong>current -&gt; next = newNode</strong> করে দিব। এবং যেহেতু তখন নতুন নোডটিই আমাদের শেষ নোড, তাই আমরা <strong>current</strong> কে আপডেট করে দিয়ে নতুন নোডের এড্রেস <strong>current</strong> এ এসাইন করে দিব। আরেকটা ব্যাপার হচ্ছে আমরা এই সবটা কাজই তো ডায়নামিকালি করব। তাহলে আমরা কোডটা এমনভাবে লিখব যাতে করে আমরা স্বয়ংক্রিয় ভাবেই নোডগুলো একের পর এক সাজাতে পারি। সেক্ষেত্রে আমরা একটি কাজ করতে পারি সেটি হচ্ছে, ইউজার থেকে প্রথমেই ইনপুট নিয়ে নিব যে আমাদের লিস্টে টোটাল নোড কয়টি হবে। সে অনুযায়ী নিচে একটি কোড লেখা হলঃ</p>
 
-<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
 </span>
 <span class="k">struct</span> <span class="n">node</span>
 <span class="p">{</span>    
